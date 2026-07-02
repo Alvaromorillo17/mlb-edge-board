@@ -7,60 +7,57 @@ const BORDER = "#1E2A1E";
 const TEXT = "#E8F0E8";
 const MUTED = "#6B7F6B";
 
+const API_KEY = "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";
+
 const styles = {
   app: { minHeight: "100vh", background: BG, color: TEXT, fontFamily: "'IBM Plex Mono', 'Courier New', monospace", padding: "0" },
   header: { borderBottom: `1px solid ${BORDER}`, padding: "20px 24px 16px", display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" },
   logo: { display: "flex", flexDirection: "column", gap: "2px" },
   logoTop: { fontSize: "9px", letterSpacing: "0.25em", color: MUTED, textTransform: "uppercase" },
   logoMain: { fontSize: "18px", fontWeight: "700", color: ACCENT, letterSpacing: "-0.02em", lineHeight: 1 },
-  logoSub: { fontSize: "9px", color: MUTED, letterSpacing: "0.1em" },
+  logoSub: { fontSize: "9px", color: MUTED },
   datePicker: { display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" },
-  dateLabel: { fontSize: "9px", color: MUTED, letterSpacing: "0.1em", textTransform: "uppercase" },
+  dateLabel: { fontSize: "9px", color: MUTED, textTransform: "uppercase" },
   dateInput: { background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: "4px", color: TEXT, fontFamily: "inherit", fontSize: "11px", padding: "6px 8px", outline: "none", cursor: "pointer" },
-  btn: { background: ACCENT, color: BG, border: "none", borderRadius: "4px", padding: "7px 14px", fontSize: "10px", fontWeight: "700", fontFamily: "inherit", letterSpacing: "0.05em", cursor: "pointer", textTransform: "uppercase" },
+  btn: { background: ACCENT, color: BG, border: "none", borderRadius: "4px", padding: "7px 14px", fontSize: "10px", fontWeight: "700", fontFamily: "inherit", cursor: "pointer", textTransform: "uppercase" },
   btnDisabled: { opacity: 0.4, cursor: "not-allowed" },
   main: { padding: "20px", maxWidth: "1000px", margin: "0 auto" },
   emptyState: { textAlign: "center", padding: "60px 0", color: MUTED },
   emptyIcon: { fontSize: "40px", marginBottom: "12px", opacity: 0.4 },
   emptyTitle: { fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "6px", color: TEXT },
-  emptyDesc: { fontSize: "11px", lineHeight: "1.5", maxWidth: "420px", margin: "0 auto" },
+  emptyDesc: { fontSize: "11px", lineHeight: "1.5", maxWidth: "400px", margin: "0 auto" },
   loadingWrap: { textAlign: "center", padding: "60px 0" },
   loadingDot: { display: "inline-block", width: "6px", height: "6px", background: ACCENT, borderRadius: "50%", margin: "0 3px", animation: "pulse 1.2s ease-in-out infinite" },
-  loadingText: { fontSize: "11px", color: MUTED, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "16px" },
-  loadingPhase: { fontSize: "10px", color: ACCENT, marginTop: "6px" },
+  loadingText: { fontSize: "11px", color: MUTED, marginTop: "16px" },
   sectionTitle: { fontSize: "9px", letterSpacing: "0.2em", color: MUTED, textTransform: "uppercase", marginBottom: "12px", paddingBottom: "6px", borderBottom: `1px solid ${BORDER}` },
   bestBetsGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "12px", marginBottom: "32px" },
   betCard: { background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: "5px", padding: "16px", position: "relative", overflow: "hidden" },
-  verifiedCard: { borderColor: ACCENT, boxShadow: "0 0 10px rgba(200, 241, 53, 0.08)" },
   betCardAccent: { position: "absolute", top: 0, left: 0, width: "3px", height: "100%" },
-  verifiedBadge: { position: "absolute", top: "6px", right: "6px", background: ACCENT, color: BG, fontSize: "8px", padding: "2px 5px", borderRadius: "2px", fontWeight: "700" },
-  betRank: { fontSize: "9px", color: MUTED, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "4px" },
-  betType: { fontSize: "8px", fontWeight: "700", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "3px", padding: "2px 6px", borderRadius: "2px", display: "inline-block" },
-  betGame: { fontSize: "13px", fontWeight: "700", color: TEXT, margin: "6px 0 3px", lineHeight: 1.2 },
+  betRank: { fontSize: "9px", color: MUTED, textTransform: "uppercase", marginBottom: "4px" },
+  betType: { fontSize: "8px", fontWeight: "700", textTransform: "uppercase", marginBottom: "3px", padding: "2px 6px", borderRadius: "2px", display: "inline-block" },
+  betGame: { fontSize: "13px", fontWeight: "700", color: TEXT, margin: "6px 0 3px" },
   betSelection: { fontSize: "14px", fontWeight: "700", color: ACCENT, marginBottom: "4px" },
   betLine: { fontSize: "10px", color: MUTED, marginBottom: "8px" },
   betReason: { fontSize: "10px", color: TEXT, lineHeight: "1.5", marginBottom: "8px", opacity: 0.85 },
   betFooter: { display: "flex", justifyContent: "space-between", alignItems: "center" },
-  confBadge: { fontSize: "9px", fontWeight: "700", letterSpacing: "0.03em" },
-  edgeBadge: { fontSize: "8px", color: MUTED, letterSpacing: "0.05em" },
+  confBadge: { fontSize: "9px", fontWeight: "700" },
+  edgeBadge: { fontSize: "8px", color: MUTED },
   confidenceBar: { height: "2px", background: BORDER, borderRadius: "1px", marginTop: "6px", overflow: "hidden" },
   confidenceFill: { height: "100%", borderRadius: "1px", transition: "width 1s ease" },
-  divider: { height: "1px", background: BORDER, margin: "24px 0" },
   summaryGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "8px", marginBottom: "24px" },
   statCard: { background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: "4px", padding: "12px", textAlign: "center" },
   statNum: { fontSize: "20px", fontWeight: "700", color: ACCENT, lineHeight: 1, marginBottom: "3px" },
-  statLabel: { fontSize: "8px", color: MUTED, letterSpacing: "0.1em", textTransform: "uppercase" },
-  infoBox: { background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: "4px", padding: "10px 14px", fontSize: "10px", color: TEXT, marginBottom: "16px", lineHeight: "1.5" },
+  statLabel: { fontSize: "8px", color: MUTED, textTransform: "uppercase" },
   errorBox: { background: "#1A0A0A", border: "1px solid #3A1A1A", borderRadius: "4px", padding: "16px", textAlign: "center", color: "#FF6B6B", fontSize: "11px" },
   errorTitle: { fontWeight: "700", marginBottom: "6px" },
   errorMessage: { fontSize: "10px", opacity: 0.8, marginBottom: "12px" },
   retryBtn: { background: "transparent", border: "1px solid #FF6B6B", borderRadius: "3px", color: "#FF6B6B", fontFamily: "inherit", fontSize: "9px", padding: "5px 10px", cursor: "pointer", textTransform: "uppercase" },
-  disclaimer: { fontSize: "8px", color: MUTED, textAlign: "center", padding: "16px 0", borderTop: `1px solid ${BORDER}`, lineHeight: "1.5" },
+  disclaimer: { fontSize: "8px", color: MUTED, textAlign: "center", padding: "16px 0", borderTop: `1px solid ${BORDER}` },
   filterRow: { display: "flex", gap: "5px", marginBottom: "14px", flexWrap: "wrap" },
   filterBtn: { background: "transparent", border: `1px solid ${BORDER}`, borderRadius: "3px", color: MUTED, fontFamily: "inherit", fontSize: "9px", padding: "4px 8px", cursor: "pointer", textTransform: "uppercase" },
   filterBtnActive: { borderColor: ACCENT, color: ACCENT },
-  contextBox: { background: SURFACE, border: `1px solid ${BORDER}`, borderLeft: `3px solid ${ACCENT}`, borderRadius: "4px", padding: "10px 14px", fontSize: "10px", color: TEXT, marginBottom: "20px", lineHeight: "1.5" },
-  avoidBox: { background: "#150A0A", border: "1px solid #2A1010", borderLeft: "3px solid #EF4444", borderRadius: "4px", padding: "10px 14px", fontSize: "10px", color: "#FCA5A5", lineHeight: "1.5" },
+  contextBox: { background: SURFACE, border: `1px solid ${BORDER}`, borderLeft: `3px solid ${ACCENT}`, borderRadius: "4px", padding: "10px 14px", fontSize: "10px", marginBottom: "20px" },
+  avoidBox: { background: "#150A0A", border: "1px solid #2A1010", borderLeft: "3px solid #EF4444", borderRadius: "4px", padding: "10px 14px", fontSize: "10px", color: "#FCA5A5" },
 };
 
 const BET_TYPE_COLORS = {
@@ -97,12 +94,10 @@ function BetCard({ bet, rank }) {
   const typeKey = Object.keys(BET_TYPE_COLORS).find((k) => bet.type?.toUpperCase().includes(k)) || "MONEYLINE";
   const colors = BET_TYPE_COLORS[typeKey] || BET_TYPE_COLORS["MONEYLINE"];
   const confPct = parseInt(bet.confidence) || 65;
-  const isVerified = bet.verified;
 
   return (
-    <div style={{ ...styles.betCard, ...(isVerified ? styles.verifiedCard : {}) }}>
-      <div style={{ ...styles.betCardAccent, background: isVerified ? ACCENT : colors.bar }} />
-      {isVerified && <div style={styles.verifiedBadge}>✅ VERIFICADO</div>}
+    <div style={styles.betCard}>
+      <div style={{ ...styles.betCardAccent, background: colors.bar }} />
       <div style={{ paddingLeft: "6px" }}>
         <div style={styles.betRank}>ENTRADA #{rank}</div>
         <span style={{ ...styles.betType, background: colors.bg, color: colors.text }}>{bet.type}</span>
@@ -111,10 +106,10 @@ function BetCard({ bet, rank }) {
         <div style={styles.betLine}>Línea: {bet.line}</div>
         <div style={styles.betReason}>{bet.reason}</div>
         <div style={styles.betFooter}>
-          <span style={{ ...styles.confBadge, color: isVerified ? ACCENT : colors.bar }}>{bet.confidence}% CONF</span>
+          <span style={{ ...styles.confBadge, color: colors.bar }}>{bet.confidence}% CONF</span>
           <span style={styles.edgeBadge}>EDGE: {bet.edge}</span>
         </div>
-        <ConfidenceBar pct={confPct} color={isVerified ? ACCENT : colors.bar} />
+        <ConfidenceBar pct={confPct} color={colors.bar} />
       </div>
     </div>
   );
@@ -125,7 +120,6 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [phase, setPhase] = useState("");
   const [filter, setFilter] = useState("ALL");
 
   const fetchMLBGames = useCallback(async (targetDate) => {
@@ -152,46 +146,90 @@ export default function App() {
     setData(null);
     setError(null);
 
-    const phases = [
-      "Consultando MLB API...",
-      "Enviando a modelos IA...",
-      "Analizando con IA...",
-      "Combinando resultados...",
-    ];
-
-    let i = 0;
-    setPhase(phases[0]);
-    const interval = setInterval(() => {
-      i = (i + 1) % phases.length;
-      setPhase(phases[i]);
-    }, 3000);
-
     try {
       const gamesText = await fetchMLBGames(date);
 
-      const response = await fetch("/api/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ date, gamesText }),
+      const promptText = `Eres un analista sabermétrico de MLB. Especialista en estadística avanzada y handicapper.
+
+FECHA: ${date}
+
+JUEGOS DEL DÍA:
+${gamesText}
+
+INSTRUCCIONES:
+1. Analiza CADA juego con métricas sabermétricas (ERA, WHIP, FIP, wRC+, park factors).
+2. Solo reporta apuestas con Edge ≥ 8%.
+3. Confianza: 60-65%=marginal, 66-72%=sólido, 73%+=fuerte. NUNCA bajo 60%.
+4. Selecciona las 5-8 mejores entradas.
+5. RESPONDE ÚNICAMENTE CON ESTE JSON (sin markdown, sin texto extra):
+
+{
+  "date": "${date}",
+  "games_analyzed": <número>,
+  "bets_above_threshold": <número>,
+  "market_summary": "<1 oración>",
+  "best_bets": [
+    {
+      "rank": 1,
+      "type": "<MONEYLINE | RUN LINE | OVER | UNDER | FIRST HALF>",
+      "game": "<EQUIPO A vs EQUIPO B>",
+      "selection": "<Selección>",
+      "line": "<Línea>",
+      "reason": "<2-3 oraciones con métricas>",
+      "confidence": <número 60-78>,
+      "edge": "<+X.X%>",
+      "key_metric": "<Métrica principal>"
+    }
+  ],
+  "props_alert": [],
+  "avoid_today": "<1-2 oraciones>"
+}`;
+
+const response = await fetch("/api-nvidia/chat/completions", {
+          method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+          model: "meta/llama-3.1-70b-instruct",
+          messages: [{ role: "user", content: promptText }],
+          temperature: 0.1,
+          max_tokens: 2048,
+        }),
       });
 
-      clearInterval(interval);
-
       if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        throw new Error(errData.error || `Error (${response.status})`);
+        const errText = await response.text();
+        throw new Error(`Error NVIDIA (${response.status})`);
       }
 
-      const parsed = await response.json();
-      if (parsed.error) throw new Error(parsed.error);
-      
+      const raw = await response.json();
+      const textResponse = raw.choices?.[0]?.message?.content;
+
+      if (!textResponse) throw new Error("Respuesta vacía del modelo");
+
+      // Extraer JSON
+      let parsed;
+      try {
+        parsed = JSON.parse(textResponse);
+      } catch {
+        const clean = textResponse.replace(/```json|```/g, "").trim();
+        const start = clean.indexOf("{");
+        const end = clean.lastIndexOf("}");
+        if (start !== -1 && end !== -1 && end > start) {
+          parsed = JSON.parse(clean.slice(start, end + 1));
+        } else {
+          throw new Error("La IA no devolvió un JSON válido");
+        }
+      }
+
       setData(parsed);
+      
     } catch (err) {
-      clearInterval(interval);
       setError(err.message);
     } finally {
       setLoading(false);
-      setPhase("");
     }
   }, [date, fetchMLBGames]);
 
@@ -214,9 +252,9 @@ export default function App() {
 
       <header style={styles.header}>
         <div style={styles.logo}>
-          <span style={styles.logoTop}>MLB Analytics v2.0</span>
+          <span style={styles.logoTop}>MLB Analytics</span>
           <span style={styles.logoMain}>⚾ EDGE BOARD</span>
-          <span style={styles.logoSub}>Triple IA · Sabermétrica</span>
+          <span style={styles.logoSub}>NVIDIA IA · Sabermétrica</span>
         </div>
         <div style={styles.datePicker}>
           <span style={styles.dateLabel}>Fecha</span>
@@ -231,10 +269,10 @@ export default function App() {
         {!loading && !data && !error && (
           <div style={styles.emptyState}>
             <div style={styles.emptyIcon}>⚾</div>
-            <div style={styles.emptyTitle}>Edge Board v2.0</div>
+            <div style={styles.emptyTitle}>Edge Board</div>
             <p style={styles.emptyDesc}>
               Selecciona fecha y presiona <strong>Analizar</strong>.<br />
-              3 modelos IA + Park Factors + MLB API
+              IA de NVIDIA + MLB Stats API
             </p>
           </div>
         )}
@@ -242,8 +280,7 @@ export default function App() {
         {loading && (
           <div style={styles.loadingWrap}>
             <div>{[0, 1, 2].map((i) => (<span key={i} style={{ ...styles.loadingDot, animationDelay: `${i * 0.2}s` }} />))}</div>
-            <div style={styles.loadingText}>Procesando</div>
-            <div style={styles.loadingPhase}>{phase}</div>
+            <div style={styles.loadingText}>Consultando IA...</div>
           </div>
         )}
 
@@ -257,17 +294,11 @@ export default function App() {
 
         {data && !loading && (
           <>
-            <div style={styles.infoBox}>
-              🤖 <strong>{data.total_models || 1} modelos IA</strong>
-              {data.verified_count > 0 && <> · ✅ <strong>{data.verified_count} picks verificados</strong></>}
-            </div>
-
             <div style={{ marginBottom: "8px" }}><div style={styles.sectionTitle}>Resumen · {formatDate(data.date)}</div></div>
             <div style={styles.summaryGrid}>
               <div style={styles.statCard}><div style={styles.statNum}>{data.games_analyzed || "—"}</div><div style={styles.statLabel}>Juegos</div></div>
               <div style={styles.statCard}><div style={styles.statNum}>{data.bets_above_threshold || "—"}</div><div style={styles.statLabel}>Edge ≥8%</div></div>
               <div style={styles.statCard}><div style={styles.statNum}>{data.best_bets?.length || 0}</div><div style={styles.statLabel}>Picks</div></div>
-              <div style={styles.statCard}><div style={styles.statNum}>{data.verified_count || 0}</div><div style={styles.statLabel}>✅ Verif.</div></div>
             </div>
 
             {data.market_summary && (
@@ -285,16 +316,16 @@ export default function App() {
 
             <div style={styles.sectionTitle}>Entradas ({filteredBets.length})</div>
             {filteredBets.length === 0 ? (
-              <div style={{ color: MUTED, fontSize: "11px", padding: "12px 0" }}>Sin entradas para este filtro.</div>
+              <div style={{ color: MUTED, fontSize: "11px", padding: "12px 0" }}>Sin entradas.</div>
             ) : (
               <div style={styles.bestBetsGrid}>{filteredBets.map((bet, i) => (<BetCard key={i} bet={bet} rank={bet.rank || i + 1} />))}</div>
             )}
 
             {data.avoid_today && (
-              <>
-                <div style={styles.divider} />
-                <div style={styles.avoidBox}><span style={{ color: "#EF4444", fontWeight: "700", marginRight: "6px" }}>⚠ EVITAR</span>{data.avoid_today}</div>
-              </>
+              <div style={styles.avoidBox}>
+                <span style={{ color: "#EF4444", fontWeight: "700", marginRight: "6px" }}>⚠ EVITAR</span>
+                {data.avoid_today}
+              </div>
             )}
 
             <div style={{ height: "16px" }} />

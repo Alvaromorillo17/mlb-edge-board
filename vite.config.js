@@ -10,6 +10,11 @@ export default defineConfig({
         target: 'https://integrate.api.nvidia.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-nvidia/, '/v1'),
+      },
+      '/api-deepseek': {
+        target: 'https://integrate.api.nvidia.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-deepseek/, '/v1'),
       }
     }
   }
